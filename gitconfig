@@ -36,10 +36,13 @@
     co = checkout
     ci = commit
     st = status
-    pl = "!git branch | grep '^*' | sed 's/^* //g' | xargs -n 1 git pull origin"
+    pp = "!git branch | grep '^*' | sed 's/^* //g' | xargs -I{} git pull upstream {}; git push"
+    fap = fetch --all --prune
     psh = push
     cp = cherry-pick
     com = checkout master
+    cod = checkout develop
+    cor = checkout release
     rom = reset origin/master --hard
     lp = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(magenta)%cn%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     lp2 = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
